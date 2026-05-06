@@ -1,0 +1,41 @@
+# Anime - Oliver i Benji
+
+## Justificació i motivació del projecte
+
+L'aplicació mostra el catàleg de personatges de l'anime **Captain Tsubasa** (conegut a Espanya com Oliver i Benji). La motivació és consumir una API pública real i mostrar les dades de forma estructurada seguint l'arquitectura MVC.
+
+## Esquema d'arquitectura
+Client (Navegador)
+↓
+Controller
+↓
+Service → API Jikan (api.jikan.moe)
+↓
+Model
+↓
+View (Razor)
+
+## Explicació del codi
+
+### Model (Models/Character.cs)
+Defineix les classes que representen les dades que retorna l'API. `CharacterEntry` conté un objecte `Character` amb el nom i la imatge, el rol i els favorits. `CharacterResponse` i `CharacterSingleResponse` s'utilitzen per deserialitzar el JSON amb Newtonsoft.Json.
+
+### Servei (Services/CharacterService.cs)
+Conté la lògica de consum de l'API. Utilitza `HttpClient` per fer les peticions HTTP i `JsonConvert.DeserializeObject` de Newtonsoft.Json per convertir el JSON en objectes C#. Té dos mètodes: `GetCharactersAsync` per obtenir tots els personatges i `GetCharacterByIdAsync` per obtenir un personatge concret.
+
+### Controladors
+- **HomeController**: gestiona la pàgina principal (Index) que obté la llista de personatges cridant el servei, i la pàgina About.
+- **CharacterController**: gestiona el detall d'un personatge. Rep l'id, el rol i els favorits com a paràmetres de la URL i crida el servei per obtenir les dades del personatge.
+
+### Vistes (Views)
+- **Index.cshtml**: mostra la llista de personatges amb imatge, nom i rol. Inclou un filtre per rol (Tots, Main, Supporting) implementat amb JavaScript.
+- **Detail.cshtml**: mostra el detall d'un personatge amb imatge, nom, rol i favorits.
+- **About.cshtml**: informació sobre el projecte.
+- **_Layout.cshtml**: plantilla compartida amb la barra de navegació.
+
+## Propostes de millora
+
+- Afegir paginació per mostrar més personatges
+- Afegir una pàgina amb informació general de l'anime (sinopsi, any, episodis)
+- Implementar un buscador de personatges per nom
+- Millorar el disseny amb un framework CSS com Bootstrap

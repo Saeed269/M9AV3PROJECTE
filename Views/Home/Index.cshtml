@@ -1,0 +1,37 @@
+﻿@model List<Anime.Models.CharacterEntry>
+@{ ViewData["Title"] = "Personatges Oliver i Benji"; }
+
+<h1 style="margin-bottom: 1.5rem;">Personatges Oliver i Benji</h1>
+
+<div style="margin-bottom: 1.5rem;">
+    <button onclick="filtrar('Tots')" style="margin-right: 0.5rem; padding: 0.5rem 1rem; cursor: pointer;">Tots</button>
+    <button onclick="filtrar('Main')" style="margin-right: 0.5rem; padding: 0.5rem 1rem; cursor: pointer;">Main</button>
+    <button onclick="filtrar('Supporting')" style="padding: 0.5rem 1rem; cursor: pointer;">Supporting</button>
+</div>
+
+<div id="llista" style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+    @foreach (var entry in Model)
+    {
+        <a href="/Character/Detail?id=@entry.Character.Mal_id&role=@entry.Role&favorites=@entry.Favorites"
+           class="card @entry.Role"
+           style="text-decoration: none; color: inherit;">
+            <div style="background: white; border-radius: 8px; padding: 1rem; width: 160px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                <img src="@entry.Character.Images.Jpg.Image_url" alt="@entry.Character.Name" style="width: 120px; height: 160px; object-fit: cover;" />
+                <p style="margin-top: 0.5rem; font-weight: bold; font-size: 0.85rem;">@entry.Character.Name</p>
+                <p style="color: #666; font-size: 0.8rem;">@entry.Role</p>
+            </div>
+        </a>
+    }
+</div>
+
+<script>
+    function filtrar(rol) {
+        document.querySelectorAll('.card').forEach(card => {
+            if (rol === 'Tots' || card.classList.contains(rol)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>

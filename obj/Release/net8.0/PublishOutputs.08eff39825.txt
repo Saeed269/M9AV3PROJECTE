@@ -1,0 +1,8 @@
+C:\Users\muham\Desktop\Anime\publish\Anime.exe
+C:\Users\muham\Desktop\Anime\publish\appsettings.Development.json
+C:\Users\muham\Desktop\Anime\publish\appsettings.json
+C:\Users\muham\Desktop\Anime\publish\Anime.dll
+C:\Users\muham\Desktop\Anime\publish\Anime.deps.json
+C:\Users\muham\Desktop\Anime\publish\Anime.runtimeconfig.json
+C:\Users\muham\Desktop\Anime\publish\Anime.pdb
+C:\Users\muham\Desktop\Anime\publish\Newtonsoft.Json.dll
