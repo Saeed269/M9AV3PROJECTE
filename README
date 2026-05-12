@@ -1,4 +1,5 @@
 # Anime - Oliver i Benji
+https://m9av3projecte.onrender.com/
 
 ## Justificació i motivació del projecte
 
@@ -39,3 +40,8 @@ Conté la lògica de consum de l'API. Utilitza `HttpClient` per fer les peticion
 - Afegir una pàgina amb informació general de l'anime (sinopsi, any, episodis)
 - Implementar un buscador de personatges per nom
 - Millorar el disseny amb un framework CSS com Bootstrap
+
+
+
+
+
