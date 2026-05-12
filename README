@@ -42,12 +42,4 @@ Conté la lògica de consum de l'API. Utilitza `HttpClient` per fer les peticion
 - Millorar el disseny amb un framework CSS com Bootstrap
 
 
-CharacterService.cs — El más importante. Es donde ocurre todo el trabajo real: las peticiones HTTP a la API de Jikan y la deserialización del JSON con Newtonsoft.Json.
-Character.cs — Muy importante. Define la estructura de los datos que recibimos de la API. Sin estos modelos Newtonsoft.Json no puede convertir el JSON en objetos C#.
-Program.cs — Importante. Es el punto de entrada, donde se configura todo: el MVC, el servicio y las rutas.
-HomeController.cs — Importante. Gestiona la página principal llamando al servicio y pasando los datos a la vista.
-CharacterController.cs — Importante. Gestiona el detalle de un personaje, recibiendo los parámetros de la URL.
-Index.cshtml — Relevante. Es la vista principal, la que más lógica tiene por el filtro de JavaScript.
-_Layout.cshtml — Relevante. Es la plantilla base compartida por todas las páginas.
-Detail.cshtml — Menos relevante. Vista simple que muestra los datos de un personaje.
-About.cshtml — El menos importante. Página estática sin lógica.
+
